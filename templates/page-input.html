@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конкретная нянечки</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="/static/img/ЛОГО.svg" alt="мурашки" class="logo" id="logo-input">
+
+        <div class="form-input">
+            <form action="/page-output" method="post" enctype="multipart/form-data">
+                <div class="form-input__inputs">
+                    <div class="txt-inputs">
+                        <div class="point point-one">
+                            <div class="point-input">
+                                <label class="txt-labels" for="x1">X1:</label>
+                                <input type="number" step="any" class="form-input__inputs-txt" name="x1" required>
+                            </div>
+                            <div class="point-input">
+                                <label class="txt-labels" for="y1">Y1:</label>
+                                <input type="number" step="any" class="form-input__inputs-txt" name="y1" required>
+                            </div>
+                        </div>
+                        <div class="point point-two">
+                            <div class="point-input">
+                                <label class="txt-labels" for="x2">X2:</label>
+                                <input type="number" step="any" class="form-input__inputs-txt" name="x2" required>
+                            </div>
+                            <div class="point-input">
+                                <label class="txt-labels" for="y2">Y2:</label>
+                                <input type="number" step="any" class="form-input__inputs-txt" name="y2" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label for="img" class="img-label">
+                        <img src="/static/img/загрузка фотоэ кнопка.png" alt="йогурт класс">
+                    </label>
+                    <input type="file" class="form-input__inputs-img" name="img" id="img" accept="image/png, image/jpg, image/jpeg" required>
+                </div>
+                <button type="submit" class="form-input__btn">Начать</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Караганда рулит</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="/static/img/ЛОГО.svg" alt="мурашки" class="logo" id="logo-output">
+
+        <div class="output-content">
+            <form action="/export-geojson" method="post" id="output-form">
+                <div class="form-output">
+                <table class="table-output">
+                    <tr class="table-output__row">
+                        <td class="table-output__name">Дата запроса</td>
+                        <td class="table-output__value">{{ date }}</td>
+                    </tr>
+                    <tr class="table-output__row">
+                        <td class="table-output__name">Координаты</td>
+                        <td class="table-output__value">{{ coords }}</td>
+                    </tr>
+                    <tr class="table-output__row">
+                        <td class="table-output__name">Объект</td>
+                        <td class="table-output__value">{{ object }} </td>
+                    </tr>
+                    <tr class="table-output__row">
+                        <td class="table-output__name">Адресс</td>
+                        <td class="table-output__value">{{ address }}</td>
+                    </tr>
+                    <tr class="table-output__row">
+                        <td class="table-output__name">Количество этажей</td>
+                        <td class="table-output__value">{{ floors }}</td>
+                    </tr>
+                    <tr class="table-output__row">
+                        <td class="table-output__name">Тип строения</td>
+                        <td class="table-output__value">{{ type }}</td>
+                    </tr>
+                    <tr class="table-output__row">
+                        <td class="table-output__name">Состояние здания</td>
+                        <td class="table-output__value">{{ condition }}</td>
+                    </tr>
+                </table>
+
+                    <input type="hidden" name="date" value="{{ date }}">
+                    <input type="hidden" name="coords" value="{{ coords }}">
+                    <input type="hidden" name="object" value="{{ object }}">
+                    <input type="hidden" name="address" value="{{ address }}">
+                    <input type="hidden" name="floors" value="{{ floors }}">
+                    <input type="hidden" name="type" value="{{ type }}">
+                    <input type="hidden" name="condition" value="{{ condition }}">
+
+                    <button type="submit" id="save-btn">Сохранить</button>
+                    <a href="/" id="back-btn">Назад</a>
+                </div>
+            </form>
+
+            <div class="map">
+                <img src="/static/img/Скрин с опен мап.png" alt="" id="test-img">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -18,7 +18,7 @@
             <form action="/export-geojson" method="post" id="output-form">
                 <div class="form-output">
                 <table class="table-output">
-                    <tr class="table-output__row">
+                    <!-- <tr class="table-output__row">
                         <td class="table-output__name">Дата запроса</td>
                         <td class="table-output__value">{{ date }}</td>
                     </tr>
@@ -45,7 +45,29 @@
                     <tr class="table-output__row">
                         <td class="table-output__name">Состояние здания</td>
                         <td class="table-output__value">{{ condition }}</td>
+                    </tr> -->
+
+                    <tr class="table-output__row table-output__first">
+                        <th class="table-put__name">№</th>
+                        <th class="table-put__name">Дата и время</th>
+                        <th class="table-put__name">Координаты</th>
+                        <th class="table-put__name">Объект</th>
+                        <th class="table-put__name">Адресс</th>
+                        <th class="table-put__name">Количество этажей</th>
+                        <th class="table-put__name">Тип здания</th>
+                        <th class="table-put__name">Состояние здания</th>
                     </tr>
+                    <tr class="table-output_row">
+                        <td class="table-output__value"></td>
+                        <td class="table-output__value">{{ date }}</td>
+                        <td class="table-output__value">{{ coords }}</td>
+                        <td class="table-output__value">{{ object }} </td>
+                        <td class="table-output__value">{{ address }}</td>
+                        <td class="table-output__value">{{ floors }}</td>
+                        <td class="table-output__value">{{ type }}</td>
+                        <td class="table-output__value">{{ condition }}</td>
+                    </tr>
+
                 </table>
 
                     <input type="hidden" name="date" value="{{ date }}">
@@ -61,9 +83,9 @@
                 </div>
             </form>
 
-            <div class="map">
+            <!-- <div class="map">
                 <img src="/static/img/Скрин с опен мап.png" alt="" id="test-img">
-            </div>
+            </div> -->
         </div>
     </div>
 </body>

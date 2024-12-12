@@ -11,31 +11,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <img src="/static/img/ЛОГО.svg" alt="мурашки" class="logo" id="logo-input">
     <div class="container">
-        <img src="/static/img/ЛОГО.svg" alt="мурашки" class="logo" id="logo-input">
 
+        <!-- Лиза узри -->
+
+        <!-- Форм инпут это большое окно с кнопками отправки -->
         <div class="form-input">
+
+            <!-- Это просто форма для работы с бэкэнбардом -->
             <form action="/page-output" method="post" enctype="multipart/form-data">
+
+                <!-- В поддиве __inputs храним сами инпуты (4 инпута с координатами + ввод изображеньки) -->
                 <div class="form-input__inputs">
+
+                    <!-- Текстовые инпуты -->
                     <div class="txt-inputs">
+
+                        <!-- Первые координаты -->
+                        <!-- Тут два инпута потребовалось, т.к. изначально еще был лабель, на всякий лучше оставить обернутым в 2 дива -->
                         <div class="point point-one">
                             <div class="point-input">
                                 <!-- <label class="txt-labels" for="x1">X1:</label> -->
-                                <input type="number" step="any" class="form-input__inputs-txt" name="x1" placeholder="X1" required>
+                                <input type="number" step="any" class="form-input__inputs-txt text-input" name="x1" placeholder="X1" required>
                             </div>
                             <div class="point-input">
                                 <!-- <label class="txt-labels" for="y1">Y1:</label> -->
-                                <input type="number" step="any" class="form-input__inputs-txt" name="y1" placeholder="Y1" required>
+                                <input type="number" step="any" class="form-input__inputs-txt text-input" name="y1" placeholder="Y1" required>
                             </div>
                         </div>
+
+                        <!-- Вторая коорда -->
                         <div class="point point-two">
                             <div class="point-input">
                                 <!-- <label class="txt-labels" for="x2">X2:</label> -->
-                                <input type="number" step="any" class="form-input__inputs-txt" name="x2" placeholder="X2" required>
+                                <input type="number" step="any" class="form-input__inputs-txt text-input" name="x2" placeholder="X2" required>
                             </div>
                             <div class="point-input">
                                 <!-- <label class="txt-labels" for="y2">Y2:</label> -->
-                                <input type="number" step="any" class="form-input__inputs-txt" name="y2" placeholder="Y2" required>
+                                <input type="number" step="any" class="form-input__inputs-txt text-input" name="y2" placeholder="Y2" required>
                             </div>
                         </div>
                     </div>
@@ -43,6 +57,8 @@
                     <!-- <label for="img" class="img-label"> -->
                         <!-- <img src="/static/img/загрузка фотоэ кнопка.png" alt="йогурт класс"> -->
                     <!-- </label> -->
+
+                    <!-- Пупуня для пнг -->
                     <label for="img" class="img-label">
                         Загрузить файл
                     </label>
@@ -50,12 +66,25 @@
                     
                 </div>
                 
+                <!-- Отчипыжил кнопки -->
                 <div class="form-input__btns">
                     <button type="submit" class="form-input__btn form-input__btn-start">Начать</button>
-                    <button type="submit" class="form-input__btn-view">Просмотр</button>
+                    <!-- Демократия настигла кнопку просмотра -->
+                    <!-- <button type="submit" class="form-input__btn-view">Просмотр</button> -->
                 </div>
             </form>
         </div>
+
+        <!-- Форма которая угодья для парсинга считает -->
+        <form method="post">
+            <div class="scrapping">
+                <h2>Координаты <b>объекта</b></h2>
+                <input class="text-input" type="text" placeholder="X">
+                <input class="text-input" type="text" placeholder="Y">
+                <button>Добавить</button>
+                <span>Добавлено: $</span>
+            </div>
+        </form>
     </div>
 </body>
 

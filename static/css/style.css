@@ -1,10 +1,11 @@
+/* Для долбоёбав снова: чикрыжим бордер чтобы не мешался потом и отступы у всего убираем, чтобы потом самим было лехче занять */
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
-    margin: 0;
-    padding: 0;
     font-family: 'Inter', sans-serif;
 }
 a{
@@ -17,12 +18,17 @@ input:focus{
     border: none;
 } */
 
+/* Див в котором всё любятово */
 .container{
     padding-left: 71px;
     width: auto;
     height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 21px;
 }
 
+/* Гагаю с логотипа */
 .logo{
     text-align: center;
     width: 356px;
@@ -36,11 +42,10 @@ input:focus{
     padding: 29px 0 80px 0;
 }
 
+
 .form-input{
     width: fit-content;
-    margin: 0 auto;
     text-align: center;
-
 }
 
 .form-input__inputs{
@@ -63,7 +68,8 @@ input:focus{
     padding-right: 37px;
 }
 
-.form-input__inputs-txt{
+/* Смузи инпуты */
+.text-input{
     width: 133px;
     /* height: 40px; */
     font-size: 16px;
@@ -71,7 +77,7 @@ input:focus{
     border: 1px solid #a0a0a0;
     padding: 10px;
 }
-.form-input__inputs-txt:placeholder{
+.text-input:placeholder{
     color: #a0a0a0;
 }
 
@@ -123,12 +129,13 @@ input:focus{
     background-color: #284ee7;
 } */
 
+
 .form-input__btns{
     text-align: center;
     padding-top: 15px;
     width: 457px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .form-input__btns button{
     padding: 13px 0;
@@ -158,9 +165,56 @@ input:focus{
     background-color: #5d5d5d;
 }
 
+/* Бисквитный стриптизер покажет (формочка которая справа подпездывает) */
+.scrapping{
+    width: 300px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 9px;
+}
+.scrapping h2{
+    color: #516EE3;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 7px 0 13px;
+}
+.scrapping input:nth-child(3){
+    margin: 13px 0 33px;
+}
+.scrapping button{
+    font-size: 16px;
+    color: #5B5B5B;
+    color: #5b5b5b;
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 13px 24px;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 39px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.scrapping button:hover{
+    text-decoration: none;
+    background-color: #5b5b5b;
+    color: #fff;
+    border: 1px solid #5b5b5b;
+}
+.scrapping span{
+    font-size: 16px;
+    color: #5b5b5b;
+    font-weight: bold;
+    text-decoration: underline;
+    align-self: start;
+    padding: 45px 0 14px;
+}
 
 
-/* Тесеракт братья */
+
+/* Тесеракт братья (типо страница оутпут) */
 
 .output-content{
     display: flex;

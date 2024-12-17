@@ -1,4 +1,3 @@
-/* Для долбоёбав снова: чикрыжим бордер чтобы не мешался потом и отступы у всего убираем, чтобы потом самим было лехче занять */
 *{
     box-sizing: border-box;
     margin: 0;
@@ -11,12 +10,6 @@ body{
 a{
     text-decoration: none;
 }
-/* input{
-    border: none;
-}
-input:focus{
-    border: none;
-} */
 
 /* Див в котором всё любятово */
 .container{
@@ -30,19 +23,14 @@ input:focus{
 
 /* Гагаю с логотипа */
 .logo{
-    text-align: center;
-    width: 356px;
-}
-#logo-input{
     display: flex;
     justify-content: center;
-    margin: 30px auto 85px;
-}
-#logo-output{
-    padding: 29px 0 80px 0;
+    width: 356px;
+    margin: 25px auto 40px;
 }
 
 
+/* Пупук Инпут */
 .form-input{
     width: fit-content;
     text-align: center;
@@ -51,9 +39,16 @@ input:focus{
 .form-input__inputs{
     background-color: transparent;
     border: 1px solid #000;
-    padding: 21px 60px 29px;
+    padding: 7px 60px 23px;
     border-radius: 15px;
     width: fit-content;
+}
+
+.form-input__inputs h2{
+    color: #516EE3;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 0 0 13px
 }
 
 .txt-inputs{
@@ -90,7 +85,7 @@ input:focus{
     padding-bottom: 13px;
 }
 .point-two{
-    padding-bottom: 33px;
+    padding-bottom: 13px;
 }
 
 /* Дурилка изображений */
@@ -218,7 +213,8 @@ input:focus{
 
 .output-content{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: start;
 }
 
 #output-form{
@@ -270,6 +266,8 @@ input:focus{
     margin-top: 19px;
     width: 120px;
     text-align: center;
+    cursor: pointer;
+    border: none;
 }
 #save-btn:hover, #back-btn:hover{
     background-color: #284ee7;
@@ -281,4 +279,29 @@ input:focus{
 .map{
     width: 892px;
     height: 771px;
+}
+
+/* Кнопка клэар */
+
+#clear button{
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    padding: 17px 0px;
+    border-radius: 32px;
+    display: inline-block;
+    background-color: #e3515b;
+    transition: .3s ease;
+    margin-top: 19px;
+    margin-bottom: 30px;
+    width: 240px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+#clear button:hover{
+    background-color: #e22c38;
+}
+#clear button a{
+    color: #fff;
 }

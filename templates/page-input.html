@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Конкретная нянечки</title>
+    <title>-</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +22,10 @@
             <!-- Это просто форма для работы с бэкэнбардом -->
             <form action="/page-output" method="post" enctype="multipart/form-data">
 
+                
                 <!-- В поддиве __inputs храним сами инпуты (4 инпута с координатами + ввод изображеньки) -->
                 <div class="form-input__inputs">
+                    <h2>Координаты <b>Полигона</b></h2>
 
                     <!-- Текстовые инпуты -->
                     <div class="txt-inputs">
@@ -76,14 +78,15 @@
         </div>
 
         <!-- Форма которая угодья для парсинга считает -->
-        <form method="post">
+        <form action="/" method="post" enctype="multipart/form-data">
             <div class="scrapping">
                 <h2>Координаты <b>объекта</b></h2>
-                <input class="text-input" type="text" placeholder="X">
-                <input class="text-input" type="text" placeholder="Y">
+                <input name="x" class="text-input" type="text" placeholder="X" required>
+                <input name="y" class="text-input" type="text" placeholder="Y" required>
                 <button>Добавить</button>
-                <span>Добавлено: $</span>
+                <span>Добавлено: {{ coords_count }}</span>
             </div>
+            <!-- <p>{{ coords }}</p> -->
         </form>
     </div>
 </body>

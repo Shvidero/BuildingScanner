@@ -11,78 +11,71 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <img src="/static/img/ЛОГО.svg" alt="мурашки" class="logo" id="logo-output">
-
+    <img src="/static/img/ЛОГО.svg" alt="мурашки" class="logo" id="logo-output">
+    <div class="container">     
         <div class="output-content">
             <form action="/export-geojson" method="post" id="output-form">
                 <div class="form-output">
                 <table class="table-output">
-                    <!-- <tr class="table-output__row">
-                        <td class="table-output__name">Дата запроса</td>
-                        <td class="table-output__value">{{ date }}</td>
-                    </tr>
-                    <tr class="table-output__row">
-                        <td class="table-output__name">Координаты</td>
-                        <td class="table-output__value">{{ coords }}</td>
-                    </tr>
-                    <tr class="table-output__row">
-                        <td class="table-output__name">Объект</td>
-                        <td class="table-output__value">{{ object }} </td>
-                    </tr>
-                    <tr class="table-output__row">
-                        <td class="table-output__name">Адресс</td>
-                        <td class="table-output__value">{{ address }}</td>
-                    </tr>
-                    <tr class="table-output__row">
-                        <td class="table-output__name">Количество этажей</td>
-                        <td class="table-output__value">{{ floors }}</td>
-                    </tr>
-                    <tr class="table-output__row">
-                        <td class="table-output__name">Тип строения</td>
-                        <td class="table-output__value">{{ type }}</td>
-                    </tr>
-                    <tr class="table-output__row">
-                        <td class="table-output__name">Состояние здания</td>
-                        <td class="table-output__value">{{ condition }}</td>
-                    </tr> -->
-
                     <tr class="table-output__row table-output__first">
                         <th class="table-put__name">№</th>
                         <th class="table-put__name">Дата и время</th>
                         <th class="table-put__name">Координаты</th>
-                        <th class="table-put__name">Объект</th>
                         <th class="table-put__name">Адресс</th>
-                        <th class="table-put__name">Количество этажей</th>
+                        <th class="table-put__name">Название объекта</th>
                         <th class="table-put__name">Тип здания</th>
+                        <th class="table-put__name">Количество этажей</th>
                         <th class="table-put__name">Состояние здания</th>
                     </tr>
-                    <tr class="table-output_row">
-                        <td class="table-output__value"></td>
-                        <td class="table-output__value">{{ date }}</td>
-                        <td class="table-output__value">{{ coords }}</td>
-                        <td class="table-output__value">{{ object }} </td>
-                        <td class="table-output__value">{{ address }}</td>
-                        <td class="table-output__value">{{ floors }}</td>
-                        <td class="table-output__value">{{ type }}</td>
-                        <td class="table-output__value">{{ condition }}</td>
-                    </tr>
+                    <!-- {{ data }} -->
+                    {% for obj in data %}
+                        <tr class="table-output_row">
+                            <td class="table-output__value"></td>
+                            <td class="table-output__value">{{ obj.date }}</td>
+                            <td class="table-output__value">{{ obj.coords }}</td>
+                            <td class="table-output__value">{{ obj.address }}</td>
+                            <!-- <td class="table-output__value">{{ obj.object  }} </td> -->
+                            <td class="table-output__value">{% for obj_name in obj.object %} {{ obj_name }} {% endfor %}</td>
+                            <!-- <td class="table-output__value">{{ obj.type }}</td> -->v
+                            <td class="table-output__value">{% for obj_type in obj.type %} {{ obj_type }} {% endfor %}</td>
+                            <td class="table-output__value">{{ obj.floors }}</td>
+                            <td class="table-output__value">{{ obj.condition }}</td>
+                        </tr>
+                    {% endfor %}
 
                 </table>
 
-                    <input type="hidden" name="date" value="{{ date }}">
-                    <input type="hidden" name="coords" value="{{ coords }}">
-                    <input type="hidden" name="object" value="{{ object }}">
-                    <input type="hidden" name="address" value="{{ address }}">
-                    <input type="hidden" name="floors" value="{{ floors }}">
-                    <input type="hidden" name="type" value="{{ type }}">
-                    <input type="hidden" name="condition" value="{{ condition }}">
+                <input type="hidden" name="date" value="{{ date }}">
+                <input type="hidden" name="coords" value="{{ coords }}">
+                <input type="hidden" name="object" value="{{ object }}">
+                <input type="hidden" name="address" value="{{ address }}">
+                <input type="hidden" name="floors" value="{{ floors }}">
+                <input type="hidden" name="type" value="{{ type }}">
+                <input type="hidden" name="condition" value="{{ condition }}">
+                    
+                    {% for obj in data %}
+                        <input type="hidden" name="date" value="{{ obj.date }}">
+                        <input type="hidden" name="coords" value="{{ obj.coords }}">
+                        <input type="hidden" name="address" value="{{ obj.address }}">
+                        <input type="hidden" name="object" value="{{ obj.object }}">
+                        <input type="hidden" name="type" value="{{ obj.type }}">
+                        <input type="hidden" name="floors" value="{{ obj.floors }}">
+                        <input type="hidden" name="condition" value="{{ obj.condition }}">
+                    {% endfor %}
+
+                    <!-- <input type="hidden" name="condition" value="{{ data }}"> -->
 
                     <button type="submit" id="save-btn">Сохранить</button>
                     <a href="/" id="back-btn">Назад</a>
                 </div>
             </form>
-
+            
+            <form action="/clear" id="clear">
+                <button type="submit">
+                    Очистить данные
+                    <!-- <a href="/">Очистить данные</a> -->
+                </button>
+            </form>
             <!-- <div class="map">
                 <img src="/static/img/Скрин с опен мап.png" alt="" id="test-img">
             </div> -->
